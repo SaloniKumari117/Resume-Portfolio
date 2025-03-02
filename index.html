@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saloni's Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: #222;
+            color: white;
+            position: fixed;
+            width: 96.5%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: #007bff;
+        }
+
+        /*about section*/
+
+        #about {
+            font-family: 'Playfair Display', serif;
+            /* Use the imported font */
+            font-size: 18px;
+            font-weight: 400;
+            color: #444;
+            /* Dark grey for readability */
+            line-height: 1.6;
+            text-align: center;
+            padding: 20px;
+            background: #f9f9f9;
+            /* Light background */
+            border-radius: 10px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(to right, #004d7a, #008793);
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .hero img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background: white;
+            color: #008793;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #007bff;
+            color: white;
+        }
+
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
+        .project-card a {
+            display: block;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            max-width: 500px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background: #008793;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: #007bff;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Saloni Kumari</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <img src="picture/saloni.jpeg" alt="Saloni Kumari">
+        <h1>Hi, I'm Saloni Kumari</h1>
+        <p>I am a frontend developer with a passion for creating interactive and responsive web applications. I
+            specialize in modern web technologies like React and Firebase.</p>
+        <a href="#contact" class="btn">Hire Me</a>
+    </section>
+
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <p>I am an aspiring frontend developer with a strong grasp of modern web technologies. I love coding, designing
+            user-friendly interfaces, and constantly learning new technologies. My expertise includes HTML, CSS,
+            JavaScript, and React. I enjoy working on projects that solve real-world problems and improve user
+            experiences.</p>
+    </section>
+
+    <section id="skills" class="container">
+        <h2>Skills</h2>
+        <p>HTML | CSS | JavaScript | React | Redux | Firebase | Git</p>
+    </section>
+
+    <section id="projects" class="container">
+        <h2>Projects</h2>
+        <div class="project-card">
+            <h3>Electro mart</h3>
+            <p>An interactive e-commerce website for seamless product browsing, secure transactions, and efficient order
+                management.</p>
+            <a href="https://salonikumari117.github.io/electronic-website/" class="btn">View Project </a>
+        </div>
+        
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Contact Me</h2>
+        <form class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="tel" name="phone" placeholder="Your Phone Number" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Saloni Kumari | All Rights Reserved</p>
+    </footer>
+
+</body>
+
+</html>
