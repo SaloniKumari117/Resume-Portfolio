@@ -34,6 +34,20 @@
             z-index: 1000;
         }
 
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+            background: none;
+            border: none;
+        }
+
         .nav-links {
             list-style: none;
             display: flex;
@@ -51,33 +65,35 @@
             color: #007bff;
         }
 
-        /* .resume-btn {
-            background: white;
-            color: #008793;
-            padding: 8px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .resume-btn:hover {
-            background: #007bff;
-            color: white;
-        } */
-
-
-
         @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                text-align: center;
+            .menu-toggle {
+                display: block;
             }
 
             .nav-links {
+                display: none;
                 flex-direction: column;
-                gap: 10px;
+                gap: 15px;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: #222;
+                text-align: center;
+                padding: 20px 0;
+                transition: max-height 0.3s ease-in-out;
+            }
+
+            .nav-links.active {
+                display: flex;
             }
         }
+
+
+
+
+
+
 
         /* Hero Section */
         .hero {
@@ -138,7 +154,7 @@
             color: #007bff;
             margin-bottom: 5px;
         }
-        
+
         .skill:hover {
             background: #dde5ee;
             transform: scale(1.1);
@@ -165,6 +181,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
             transition: transform 0.3s;
+            text-align: left;
         }
 
         .project-card:hover {
@@ -177,6 +194,12 @@
             color: #007bff;
             text-decoration: none;
             font-weight: bold;
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
         }
 
         /* Contact Form */
@@ -223,16 +246,37 @@
     <header>
         <nav>
             <div class="logo">Saloni Kumari</div>
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="https://drive.google.com/file/d/1nLo8t1pUN8IFuOMxh6tf0MGBFhNtSi42/view?usp=sharing" class="resume-btn" download>Resume</a></li>
+                <li><a href="Saloni_Kumari_Resume.pdf" target="_blank">Resume</a></li>
             </ul>
         </nav>
     </header>
+
+    <script>
+        function toggleMenu() {
+            let navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener("click", function (event) {
+            let menu = document.querySelector('.nav-links');
+            let toggleButton = document.querySelector('.menu-toggle');
+
+            if (!menu.contains(event.target) && !toggleButton.contains(event.target)) {
+                menu.classList.remove('active');
+            }
+        });
+    </script>
+
 
     <section id="home" class="hero">
         <img src="picture/saloni.jpeg" alt="Saloni Kumari">
@@ -259,18 +303,29 @@
             <div class="skill"><i class="fas fa-database"></i>Firebase</div>
         </div>
     </section>
-   
+
 
     <section id="projects" class="container">
-        <h2>Projects</h2>
+        <h2>🚀 My Projects</h2>
+        <p>Here are some of my amazing projects that showcase my skills and creativity! ✨</p>
+
         <div class="project-card">
-            <h3>Electro Mart</h3>
-            <p>An e-commerce platform for seamless product browsing and secure transactions.</p>
+            <h3>🛒 Electro Mart</h3>
+            <img src="picture/electro.png" alt="Electro Mart Screenshot">
+            <p>An e-commerce platform for seamless product browsing and secure transactions. 🏪💳</p>
+            <p>Built with HTML, CSS, JavaScript, and responsiveness in mind! 📱💻</p>
+            <p>🔹 User-friendly UI for better shopping experience 🛍️</p>
+            <p>🔹 Secure checkout process with payment integration 🔐</p>
             <a href="https://salonikumari117.github.io/electronic-website/" class="btn">View Project</a>
         </div>
+
         <div class="project-card">
-            <h3>My E-Commerce</h3>
-            <p>An online shopping platform for easy and efficient order management.</p>
+            <h3>🛍️ My E-Commerce</h3>
+            <img src="picture/my e-com.png" alt="My E-Commerce Screenshot">
+            <p>An online shopping platform for easy and efficient order management. 🛍️📦</p>
+            <p>Provides a smooth user experience with modern UI and backend integration! 🔥</p>
+            <p>🔹 Real-time product updates and dynamic filtering 🚀</p>
+            <p>🔹 Admin panel for easy inventory management ⚙️</p>
             <a href="https://salonikumari117.github.io/e-commerce/" class="btn">View Project</a>
         </div>
     </section>
