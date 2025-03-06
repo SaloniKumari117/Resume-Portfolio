@@ -15,23 +15,23 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background: #f5f5f5;
-            color: #333;
+            font-family: Arial, sans-serif;
         }
 
-        /* Navigation Bar */
-        nav {
+        .navbar {
+            background: #333;
+            color: white;
+            padding: 15px;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 30px;
-            background: #222;
-            color: white;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+            max-width: 1200px;
+            margin: auto;
         }
 
         .logo {
@@ -39,30 +39,28 @@
             font-weight: bold;
         }
 
-        .menu-toggle {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: white;
-            background: none;
-            border: none;
-        }
-
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 20px;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
             font-size: 18px;
-            transition: 0.3s;
         }
 
-        .nav-links a:hover {
-            color: #007bff;
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
         }
 
         @media (max-width: 768px) {
@@ -73,27 +71,22 @@
             .nav-links {
                 display: none;
                 flex-direction: column;
-                gap: 15px;
                 position: absolute;
                 top: 60px;
-                left: 0;
+                right: 0;
+                background: #333;
                 width: 100%;
-                background: #222;
                 text-align: center;
-                padding: 20px 0;
-                transition: max-height 0.3s ease-in-out;
             }
 
             .nav-links.active {
                 display: flex;
             }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
         }
-
-
-
-
-
-
 
         /* Hero Section */
         .hero {
@@ -172,8 +165,9 @@
             max-width: 900px;
             margin: 0 auto;
         }
- /* Project Section Styling */
- #projects {
+
+        /* Project Section Styling */
+        #projects {
             width: 100vw;
             padding: 60px 0;
             background: #f9f9f9;
@@ -220,7 +214,7 @@
             text-decoration: none;
             font-weight: bold;
         }
-    
+
 
         .contact-info {
             display: flex;
@@ -302,99 +296,94 @@
                 width: 90%;
             }
         }
-    /* Contact Form Styling */
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    padding-bottom: 30px; /* Adds a small gap before the footer */
-}
 
-/* Footer Styling */
-footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 15px 10px; /* Reduce padding for a better look */
-    font-size: 14px;
-    width: 100vw;
-    position: relative;
-    left:0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+        /* Contact Form Styling */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding-bottom: 30px;
+            /* Adds a small gap before the footer */
+        }
 
-/* adjust contaniner if neededa*/
-.container {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0;
-}
+        /* Footer Styling */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 15px 10px;
+            /* Reduce padding for a better look */
+            font-size: 14px;
+            width: 100vw;
+            position: relative;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
-/* Adjust Footer Links */
-.footer-links {
-    display: flex;
-    gap: 12px; /* Reduce gap between icons */
-    justify-content: center;
-    margin-bottom: 8px;
-}
+        /* adjust contaniner if neededa*/
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0;
+        }
 
-.footer-links a {
-    color: white;
-    font-size: 18px;
-    transition: 0.3s;
-}
+        /* Adjust Footer Links */
+        .footer-links {
+            display: flex;
+            gap: 12px;
+            /* Reduce gap between icons */
+            justify-content: center;
+            margin-bottom: 8px;
+        }
 
-.footer-links a:hover {
-    color: #007bff;
-    transform: scale(1.1);
-}
+        .footer-links a {
+            color: white;
+            font-size: 18px;
+            transition: 0.3s;
+        }
 
-/* Reduce space in copyright text */
-footer p {
-    margin: 3px 0;
-    font-size: 13px;
-}
+        .footer-links a:hover {
+            color: #007bff;
+            transform: scale(1.1);
+        }
 
-
+        /* Reduce space in copyright text */
+        footer p {
+            margin: 3px 0;
+            font-size: 13px;
+        }
     </style>
 </head>
 
 <body>
     <header>
-        <nav>
-            <div class="logo">Saloni Kumari</div>
-            <btn class="menu-toggle" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <a href="https://drive.google.com/uc?export=download&id=1nLo8t1pUN8IFuOMxh6tf0MGBFhNtSi42"
-                    download>Resume</a>
-
-            </ul>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">Saloni Kumari</h1>
+                <button class="menu-toggle" id="menu-toggle">☰</button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="https://drive.google.com/uc?export=download&id=1nLo8t1pUN8IFuOMxh6tf0MGBFhNtSi42"
+                            download>Resume</a></li>
+                </ul>
         </nav>
     </header>
 
+
+
     <script>
-        function toggleMenu() {
-            let navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
-        }
-
-        // Close menu when clicking outside
-        document.addEventListener("click", function (event) {
-            let menu = document.querySelector('.nav-links');
-            let toggleButton = document.querySelector('.menu-toggle');
-
-            if (!menu.contains(event.target) && !toggleButton.contains(event.target)) {
-                menu.classList.remove('active');
-            }
+      document.addEventListener("DOMContentLoaded", function() {
+            const menuToggle = document.getElementById("menu-toggle");
+            const navLinks = document.getElementById("nav-links");
+            
+            menuToggle.addEventListener("click", function() {
+                navLinks.classList.toggle("active");
+            });
         });
     </script>
 
@@ -473,17 +462,17 @@ footer p {
             <button type="submit">Send Message</button>
         </form>
 
-        
-            <footer>
-                <div class="footer-links">
-                    <a href="github.com/SaloniKumari117" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="linkedin.com/in/saloni-kumari-46ab4a270/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:salonikumari150303"><i class="fas fa-envelope"></i></a>
-                </div>
-                <p>&copy; 2025 Saloni Kumari | All Rights Reserved</p>
-            </footer>
-            
-        
+
+        <footer>
+            <div class="footer-links">
+                <a href="SaloniKumari117" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:salonikumari150303"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2025 Saloni Kumari | All Rights Reserved</p>
+        </footer>
+
+
 
 </body>
 
