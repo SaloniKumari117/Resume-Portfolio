@@ -172,73 +172,192 @@
             max-width: 900px;
             margin: 0 auto;
         }
+ /* Project Section Styling */
+ #projects {
+            width: 100vw;
+            padding: 60px 0;
+            background: #f9f9f9;
+            text-align: center;
+            justify-content: center;
+        }
 
-        /* Project Cards */
+        .project-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            width: 90%;
+            margin: 0 auto;
+        }
+
         .project-card {
+            width: 50%;
+            max-width: 1200px;
             background: #fff;
-            padding: 20px;
+            padding: 30px;
             margin: 20px auto;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
             transition: transform 0.3s;
-            text-align: left;
+            text-align: center;
         }
 
         .project-card:hover {
             transform: scale(1.05);
         }
 
+        .project-card img {
+            width: 50%;
+            max-width: 800px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
         .project-card a {
-            display: block;
+            display: inline-block;
             margin-top: 10px;
             color: #007bff;
             text-decoration: none;
             font-weight: bold;
         }
+    
 
-        .project-card img {
-            width: 100%;
-            border-radius: 5px;
-            margin-bottom: 10px;
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            font-size: 18px;
+            margin-bottom: 30px;
         }
 
-        /* Contact Form */
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #fff;
+            padding: 12px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease-in-out;
+            width: fit-content;
+        }
+
+        .contact-item i {
+            font-size: 22px;
+            color: #007bff;
+        }
+
+        .contact-item a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            background: #f0f4f8;
+        }
+
         .contact-form {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
         }
 
         .contact-form input,
         .contact-form textarea {
             width: 100%;
             max-width: 500px;
-            padding: 10px;
+            padding: 12px;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 8px;
+            font-size: 16px;
         }
 
         .contact-form button {
-            background: #008793;
+            background: #007bff;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 20px;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
+            font-size: 16px;
             transition: 0.3s;
         }
 
         .contact-form button:hover {
-            background: #007bff;
+            background: #0056b3;
         }
 
-        footer {
-            background: #222;
-            color: white;
-            text-align: center;
-            padding: 20px;
+        @media (max-width: 600px) {
+            .contact-item {
+                width: 90%;
+                justify-content: center;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                width: 90%;
+            }
         }
+    /* Contact Form Styling */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-bottom: 30px; /* Adds a small gap before the footer */
+}
+
+/* Footer Styling */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px 10px; /* Reduce padding for a better look */
+    font-size: 14px;
+    width: 100vw;
+    position: relative;
+    left:0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* adjust contaniner if neededa*/
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Adjust Footer Links */
+.footer-links {
+    display: flex;
+    gap: 12px; /* Reduce gap between icons */
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #007bff;
+    transform: scale(1.1);
+}
+
+/* Reduce space in copyright text */
+footer p {
+    margin: 3px 0;
+    font-size: 13px;
+}
+
+
     </style>
 </head>
 
@@ -246,7 +365,7 @@
     <header>
         <nav>
             <div class="logo">Saloni Kumari</div>
-            <button class="menu-toggle" onclick="toggleMenu()">
+            <btn class="menu-toggle" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-links">
@@ -255,7 +374,8 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <a href="https://drive.google.com/uc?export=download&id=1nLo8t1pUN8IFuOMxh6tf0MGBFhNtSi42" download>Resume</a>
+                <a href="https://drive.google.com/uc?export=download&id=1nLo8t1pUN8IFuOMxh6tf0MGBFhNtSi42"
+                    download>Resume</a>
 
             </ul>
         </nav>
@@ -330,20 +450,41 @@
             <a href="https://salonikumari117.github.io/e-commerce/" class="btn">View Project</a>
         </div>
     </section>
-
     <section id="contact" class="container">
         <h2>Contact Me</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <a href="tel:9570069866">9570069866</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:salonikumari015303@gmail.com">salonikumari015303@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                <a href="" target="_blank">linkedin.com/in/saloni-kumari</a>
+            </div>
+        </div>
         <form class="contact-form">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
             <button type="submit">Send Message</button>
         </form>
-    </section>
 
-    <footer>
-        <p>&copy; 2025 Saloni Kumari | All Rights Reserved</p>
-    </footer>
+        
+            <footer>
+                <div class="footer-links">
+                    <a href="github.com/SaloniKumari117" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="linkedin.com/in/saloni-kumari-46ab4a270/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:salonikumari150303"><i class="fas fa-envelope"></i></a>
+                </div>
+                <p>&copy; 2025 Saloni Kumari | All Rights Reserved</p>
+            </footer>
+            
+        
+
 </body>
 
 </html>
